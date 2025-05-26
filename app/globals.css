@@ -2,28 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Set full height for base elements */
+html,
+body,
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  @apply h-full;
 }
 
-@media (prefers-color-scheme: dark) {
+/* ===== Root dark theme only ===== */
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* Background and surfaces */
+    --color-background: #15161d;
+    --color-surface-1: #191a22;
+    --color-surface-2: #1b1c27;
+    --color-surface-3: #1e1f2a;
+    --color-surface-4: #222430;
+
+    /* Borders */
+    --color-border-primary: #292b38;
+    --color-border-secondary: #222330;
+
+    /* Typography */
+    --color-text-primary: #e3e4ea;
+    --color-text-secondary: #999aa1;
+    --color-text-selected: #ffffff;
+
+    /* Icons */
+    --color-icon-default: #97989e;
+
+    /* Defaults (used by @apply utilities) */
+    --background: 151 22% 10%; /* close to #15161d in HSL */
+    --foreground: 240 20% 90%; /* approx for #e3e4ea */
+
+    --card: 220 13% 11%; /* #191a22 */
+    --card-foreground: 240 20% 90%;
+
+    --popover: 220 13% 11%;
+    --popover-foreground: 240 20% 90%;
+
+    --primary: 240 20% 90%;
+    --primary-foreground: 220 13% 11%;
+
+    --secondary: 230 11% 14%; /* #222430 */
+    --secondary-foreground: 240 20% 90%;
+
+    --muted: 230 11% 14%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 230 11% 14%;
+    --accent-foreground: 240 20% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 230 11% 16%; /* #292b38 */
+    --input: 230 11% 16%;
+    --ring: 240 20% 90%;
+
+    --radius: 0.5rem;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* ===== Utility Classes ===== */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @layer utilities {
