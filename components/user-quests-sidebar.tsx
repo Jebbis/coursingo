@@ -4,7 +4,7 @@ import { LuAward } from "react-icons/lu";
 import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
 
-export const UserStatsSidebar = () => {
+export const UserQuestsSidebar = () => {
   return (
     <div className="bg-surfacegreen2 rounded-xl flex flex-col gap-2">
       <div className=" flex flex-col p-3 gap-4">
@@ -13,11 +13,16 @@ export const UserStatsSidebar = () => {
           <p className="font-bold">Your quest progress</p>
         </div>
         <div className="flex flex-col gap-2 ">
-          <p className="text-xs pl-0.5">2/10 daily quests</p>
+          <p className="text-xs pl-0.5">
+            <span className="font-bold">2/10</span> daily quests
+          </p>
           <Progress value={20} color="#27a156" className="w-full" />
         </div>
         <div className="flex flex-col gap-2 ">
-          <p className="text-xs pl-0.5 ">8/20 Monthly quests</p>
+          <p className="text-xs pl-0.5 ">
+            {" "}
+            <span className="font-bold">8/20</span> Monthly quests
+          </p>
           <Progress value={40} color="#27a156" className="w-full" />
         </div>
       </div>
