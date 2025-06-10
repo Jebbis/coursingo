@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const font = Nunito({ subsets: ["latin"] });
@@ -20,6 +21,7 @@ export default function RootLayout({
     <ClerkProvider afterSignOutUrl="/">
       <html lang="en" suppressHydrationWarning>
         <body className={font.className}>
+          <Toaster />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
